@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <title>時間の表示</title>
+    <style type="text/css">
+        body {
+            background-color: #fff;
+        }
+        
+        div#time {
+            background-color: #00007f;
+            color: #fff;
+            margin: 0 0 0 auto;
+            padding: 30px 100px;
+            font-family: sans-serif;
+            font-size: 28pt;
+            display: block;
+            width: fit-content;
+            border-radius: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="time"></div>
+    <script>
+        time();
+
+        function time() {
+            var now = new Date();
+            document.getElementById("time").innerHTML = now.toLocaleString("ja", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+                hour: "numeric",
+                minute: "2-digit"
+            });
+        }
+        setInterval('time()', 1000);
+    </script>
+</body>
+
+</html>
